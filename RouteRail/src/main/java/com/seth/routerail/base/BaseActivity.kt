@@ -4,53 +4,35 @@ import android.content.Context
 import android.os.Bundle
 import android.support.v4.app.FragmentTransaction
 import android.support.v7.app.AppCompatActivity
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import android.widget.FrameLayout
 import android.widget.Toast
 import com.seth.routerail.R
 import com.seth.routerail.util.ProgressFragmentDialog
+import com.seth.routerail.util.StatusBarUtils
 import com.seth.routerail.view.BaseView
 import kotlinx.android.synthetic.main.activity_base.*
 
 /**
- * Created by hspcadmin on 2018/6/20.
+ * Created by seth on 2018/6/20.
  */
-abstract class BaseActivity: AppCompatActivity(), BaseView {
+abstract class BaseActivity: AppCompatActivity(), BaseView{
     private var progressDialog: ProgressFragmentDialog? = null
     private val transcation = supportFragmentManager.beginTransaction() as FragmentTransaction
     private var parentFramLayout: FrameLayout? = null
-
+    protected var statusBarColor = -1
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         initContentView(R.layout.activity_base)
+        StatusBarUtils(this, statusBarColor).initScreen()
     }
 
     private fun initContentView(layoutResID: Int) {
-        var group = findViewById<ViewGroup>(android.R.id.content)       //获取窗口的根布局
-        group.removeAllViews()                                          //移除根布局上的组件
+       var group = findViewById<ViewGroup>(android.R.id.content)       //获取窗口的根布局
+        group.removeAllViews()
         parentFramLayout = FrameLayout(this)
-        var statusBaarView = View(this)
-        var lp = ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,)
         group.addView(parentFramLayout)                               //将自定义父布局，加载到窗口的根布局上
         LayoutInflater.from(this).inflate(layoutResID, parentFramLayout ,true)  //将自定义字布局加入到parentFragment上
-
-
-    }
-
-    public fun getStatusBarHeight(): Int{
-        var result = 0;
-        //获取状态蓝高度的资源id
-        var resourceId = resources.getIdentifier("status_bar_height", "dimen", "android")
-        if(resourceId > 0)
-
-    }
-
-
-    private fun addStatusViewWithColor(){
-        var statusBarView = View(this);
-
     }
 
     override fun setContentView(layoutResID: Int) {
