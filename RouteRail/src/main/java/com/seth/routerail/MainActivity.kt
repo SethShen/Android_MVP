@@ -2,9 +2,7 @@ package com.seth.routerail
 
 
 import android.os.Bundle
-import android.view.MenuItem
 import android.view.View
-import com.seth.routerail.base.BaseActivity
 import com.seth.routerail.base.BaseDrawerActivity
 import com.seth.routerail.presenter.MvpPresenter
 import com.seth.routerail.view.MvpView
@@ -16,6 +14,7 @@ class MainActivity : BaseDrawerActivity(), MvpView {
     private var presenter: MvpPresenter? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        statusBarColor = resources.getColor(R.color.color_bg)
         super.onCreate(savedInstanceState)
         addMainContentView(R.layout.activity_main)
 
@@ -23,7 +22,6 @@ class MainActivity : BaseDrawerActivity(), MvpView {
             attachView(this@MainActivity)
         }
     }
-
 
     public fun getData(view: View){
         presenter?.getData("normal")

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:gravity="center_horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/shape_bg_black_5r">
+
+    <LinearLayout
+        android:padding="20dp"
+        android:gravity="center_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/start_city_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="出发城市"
+            android:textColorHint="@color/color_bg"
+            android:textColor="@android:color/black"
+            android:textSize="22dp"
+            android:paddingBottom="3dp"
+            android:paddingRight="7dp"
+            android:paddingLeft="7dp"
+            android:background="@drawable/under_line_black_2"
+            />
+        <ImageView
+            android:layout_marginBottom="10dp"
+            android:id="@+id/cities_change_img"
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:src="@drawable/icon_change"/>
+
+
+        <TextView
+            android:id="@+id/end_city_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="出发城市"
+            android:textColorHint="@color/color_bg"
+            android:textColor="@android:color/black"
+            android:textSize="22dp"
+            android:paddingBottom="3dp"
+            android:paddingRight="7dp"
+            android:paddingLeft="7dp"
+            android:background="@drawable/under_line_black_2"
+            />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/route_search_rl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:onClick="searchRoute">
+
+        <TextView
+            android:id="@+id/route_search_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="查询"
+            android:layout_marginLeft="28dp"
+            android:textColor="@android:color/black"
+            android:textSize="25dp"
+            android:paddingBottom="3dp"
+            android:paddingRight="7dp"
+            android:paddingLeft="7dp"/>
+        <ImageView
+            android:layout_marginTop="14dp"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:src="@drawable/icon_next_half_arr"/>
+    </RelativeLayout>
+</LinearLayout>

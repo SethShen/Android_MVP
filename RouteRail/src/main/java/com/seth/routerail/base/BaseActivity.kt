@@ -9,7 +9,6 @@ import android.widget.FrameLayout
 import android.widget.Toast
 import com.seth.routerail.R
 import com.seth.routerail.util.ProgressFragmentDialog
-import com.seth.routerail.util.StatusBarUtils
 import com.seth.routerail.view.BaseView
 import kotlinx.android.synthetic.main.activity_base.*
 
@@ -20,11 +19,9 @@ abstract class BaseActivity: AppCompatActivity(), BaseView{
     private var progressDialog: ProgressFragmentDialog? = null
     private val transcation = supportFragmentManager.beginTransaction() as FragmentTransaction
     private var parentFramLayout: FrameLayout? = null
-    protected var statusBarColor = -1
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         initContentView(R.layout.activity_base)
-        StatusBarUtils(this, statusBarColor).initScreen()
     }
 
     private fun initContentView(layoutResID: Int) {
