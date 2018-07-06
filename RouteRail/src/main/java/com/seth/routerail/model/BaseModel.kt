@@ -37,15 +37,15 @@ public abstract class BaseModel<T>(vararg args: String){
 
     //添加Callback并执行数据请求
     //具体的数据请求由子类实现
-    public abstract fun execute(callback: T)
+    abstract fun execute(callback: T)
 
     //执行Get网络请求
-    public fun requesrGetAPI(url: String, callback: T){
+    fun requesrGetAPI(url: String, callback: T){
 
     }
 
     //执行Get网络请求
-    public fun requesrGetAPI(url: String, params: Map<String, String>, callback: T){
+    fun requesrGetAPI(url: String, params: Map<String, String>, callback: T){
 
     }
 

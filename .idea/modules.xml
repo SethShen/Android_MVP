@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/MVP_1.iml" filepath="$PROJECT_DIR$/MVP_1.iml" />
       <module fileurl="file://$PROJECT_DIR$/RouteRail/RouteRail.iml" filepath="$PROJECT_DIR$/RouteRail/RouteRail.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://F:\studyplace\android\MVP_1\RouteRail\mvp_2.iml" filepath="F:\studyplace\android\MVP_1\RouteRail\mvp_2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/train-route.iml" filepath="$PROJECT_DIR$/train-route.iml" />
     </modules>
   </component>
 </project>

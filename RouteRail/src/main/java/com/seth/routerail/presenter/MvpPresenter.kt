@@ -1,11 +1,8 @@
 package com.seth.routerail.presenter
 
-import android.net.RouteInfo
+import com.seth.routerail.`object`.RouteInfo
 import com.seth.routerail.view.MvpView
-import com.seth.routerail.Token
 import com.seth.routerail.callback.Callback
-import com.seth.routerail.callback.MvpCallback
-import com.seth.routerail.model.DataModel
 import com.seth.routerail.model.RailInfoModel
 
 /**
@@ -16,7 +13,7 @@ class MvpPresenter: BasePresenter<MvpView>() {
      * 获取网络数据
      * @param params 参数
      */
-    public fun getData(params: String, path: String? = null){
+    fun getData(path: String, params: String? = null){
         //显示加载进度条
         getView()?.showLoading()
         //调用Model请求数据
@@ -43,7 +40,6 @@ class MvpPresenter: BasePresenter<MvpView>() {
 //                } as Callback<Any>)
         RailInfoModel().
                 path(path).
-                params(params).
                 clazz(RouteInfo::class.java).
                 execute(object : Callback<ArrayList<RouteInfo>>{
                     override fun onSuccess(datas: ArrayList<RouteInfo>) {
@@ -59,7 +55,7 @@ class MvpPresenter: BasePresenter<MvpView>() {
                     }
 
                     override fun onComplete() {
-                        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+                        getView()?.hideLoading()
                     }
 
                 })

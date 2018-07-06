@@ -18,7 +18,7 @@ abstract class OkHttpRequestBuilderHasParam<T: OkHttpRequestBuilder<T>>(myOkHttp
             if (mUrl == null || mUrl?.length == 0){
                 throw IllegalArgumentException("url can not be null")
             }
-            val builder: Request.Builder = equeueBuilder();
+            val builder: Request.Builder = equeueBuilder()
             appendHeader(builder,mHarder)
             if(mTag != null){
                 builder.tag(mTag)

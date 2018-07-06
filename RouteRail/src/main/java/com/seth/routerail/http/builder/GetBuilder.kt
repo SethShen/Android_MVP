@@ -31,7 +31,7 @@ class GetBuilder(myOkhttp: MyOkHttp) : OkHttpRequestBuilderHasParam<GetBuilder>(
         errorMsg = "Get enqueue error:"
         if (mParams != null && mParams?.size!! > 0)
             mUrl = appendParams(mUrl, mParams)
-        val builder: Request.Builder = Request.Builder().url(mUrl).get();
+        val builder: Request.Builder = Request.Builder().url(mUrl).get()
         return  builder
     }
 

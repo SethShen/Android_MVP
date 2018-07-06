@@ -21,8 +21,8 @@ class HomeAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     private val mDatas: ArrayList<RouteInfo> = arrayListOf()
 
-    private var mHeaderView: View? = null
-    private var mFooterView: View? = null
+    var mHeaderView: View? = null
+    var mFooterView: View? = null
 
     fun setList(datas : ArrayList<RouteInfo>){
         mDatas.removeAll(mDatas)
@@ -90,6 +90,7 @@ class HomeAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 //            }
 //        }
     }
+
 
 
 }
