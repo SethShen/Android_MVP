@@ -24,7 +24,7 @@
             android:paddingBottom="3dp"
             android:paddingRight="7dp"
             android:paddingLeft="7dp"
-            android:background="@drawable/under_line_black_2"
+            android:background="@drawable/shape_under_border_line_black_2"
             />
         <ImageView
             android:layout_marginBottom="10dp"
@@ -46,7 +46,7 @@
             android:paddingBottom="3dp"
             android:paddingRight="7dp"
             android:paddingLeft="7dp"
-            android:background="@drawable/under_line_black_2"
+            android:background="@drawable/shape_under_border_line_black_2"
             />
 
     </LinearLayout>

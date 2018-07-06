@@ -1,5 +1,6 @@
 package com.seth.routerail.view
 
+import com.seth.routerail.`object`.RouteInfo
 import com.seth.routerail.view.BaseView
 
 /**
@@ -7,4 +8,5 @@ import com.seth.routerail.view.BaseView
  */
 interface MvpView: BaseView {
     fun showData(data: String)
+    fun showList(datas: ArrayList<RouteInfo>) {}
 }

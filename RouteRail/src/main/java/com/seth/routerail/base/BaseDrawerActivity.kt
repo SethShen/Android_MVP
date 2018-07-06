@@ -15,22 +15,30 @@ import kotlinx.android.synthetic.main.activity_drawer_base.*
 open class BaseDrawerActivity: BaseActivity() , NavigationView.OnNavigationItemSelectedListener{
 
     protected var statusBarColor = -1
+    protected var isDrawerLayout = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_drawer_base)
+        if(isDrawerLayout){
+            setContentView(R.layout.activity_drawer_base)
+            setDrawerLayout()
+        }
         StatusBarUtils.apply {
             mActivity = this@BaseDrawerActivity
             mColor = statusBarColor
-            isDrawerLayout = true
+            isDrawerLayout = this@BaseDrawerActivity.isDrawerLayout
             drawerContentId = R.id.base_drawer_content
             initScreen()
         }
-        setDrawerLayout()
+
     }
 
     fun addMainContentView(layoutId: Int){
-        LayoutInflater.from(this).inflate(layoutId, base_drawer_content ,true)
+        if(isDrawerLayout){
+            LayoutInflater.from(this).inflate(layoutId, base_drawer_content ,true)
+        }else{
+            setContentView(layoutId)
+        }
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {

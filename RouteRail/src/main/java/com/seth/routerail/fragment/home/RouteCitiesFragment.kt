@@ -35,7 +35,6 @@ class RouteCitiesFragment : Fragment(), View.OnClickListener {
     }
     override fun onClick(v: View?) {
         when(v?.id){
-            R.id.start_city_tv -> ""
 
         }
     }

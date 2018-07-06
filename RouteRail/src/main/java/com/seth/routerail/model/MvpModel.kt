@@ -6,7 +6,8 @@ import com.seth.routerail.callback.Callback
 /**
  * Created by hspcadmin on 2018/6/20.
  */
-class MvpModel(vararg args: String) : BaseModel<String>(*args) {
+class MvpModel(vararg args: String) : BaseModel<Callback<String>>(*args) {
+    
 
     constructor() : this(*emptyArray())
     /**

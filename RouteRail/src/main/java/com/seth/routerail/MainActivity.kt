@@ -2,8 +2,10 @@ package com.seth.routerail
 
 
 import android.os.Bundle
+import android.support.v4.app.FragmentTransaction
 import android.view.View
 import com.seth.routerail.base.BaseDrawerActivity
+import com.seth.routerail.fragment.home.RouteCitiesFragment
 import com.seth.routerail.presenter.MvpPresenter
 import com.seth.routerail.view.MvpView
 import kotlinx.android.synthetic.main.activity_main.*
